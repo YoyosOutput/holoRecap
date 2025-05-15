@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hololive Watch History RECAP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold mb-2 gradient-text">Hololive Watch History RECAP</h1>
+            <p class="text-gray-400">あなたのホロライブ視聴履歴を可視化します</p>
+        </header>
+
+        <div id="file-upload-container" class="flex flex-col items-center justify-center p-8 border-2 border-dashed border-blue-400 rounded-lg mb-8 transition-all duration-300 hover:border-blue-300 bg-gray-800 bg-opacity-50">
+            <div class="file-upload-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+            </div>
+            <h2 class="text-xl mb-2">Google Takeout の watch-history.json をアップロード</h2>
+            <p class="text-gray-400 mb-4 text-sm">ファイルはブラウザ内で処理され、サーバーには送信されません</p>
+            <input type="file" id="file-input" class="hidden" accept=".json">
+            <button id="file-select-button" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                ファイルを選択
+            </button>
+            <div id="file-name" class="mt-4 text-gray-400"></div>
+            <div id="loading-indicator" class="hidden mt-4">
+                <div class="loader"></div>
+                <p class="text-gray-400 mt-2">解析中...</p>
+            </div>
+        </div>
+
+        <div id="results-container" class="hidden">
+            <div class="flex flex-col lg:flex-row mb-8 gap-4">
+                <div class="w-full lg:w-1/4">
+                    <div class="bg-gray-800 rounded-lg p-6 h-full">
+                        <h3 class="text-xl font-bold mb-4 gradient-text">統計情報</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="text-gray-400">総視聴回数</span>
+                                <span id="total-watches" class="text-2xl font-bold">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="text-gray-400">ユニークVtuber数</span>
+                                <span id="unique-vtubers" class="text-2xl font-bold">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="text-gray-400">最も視聴した期</span>
+                                <span id="most-watched-gen" class="text-2xl font-bold">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="text-gray-400">解析期間</span>
+                                <span id="date-range" class="text-lg font-medium">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold gradient-text">視聴回数ランキング</h3>
+                            <div class="filters">
+                                <select id="gen-filter" class="bg-gray-700 text-white rounded px-3 py-1 text-sm">
+                                    <option value="all">全期</option>
+                                    <option value="0期生">0期生</option>
+                                    <option value="1期生">1期生</option>
+                                    <option value="2期生">2期生</option>
+                                    <option value="3期生">3期生</option>
+                                    <option value="4期生">4期生</option>
+                                    <option value="5期生">5期生</option>
+                                    <option value="ゲーマーズ">ゲーマーズ</option>
+                                    <option value="秘密結社holoX">秘密結社holoX</option>
+                                    <option value="ReGLOSS">ReGLOSS</option>
+                                    <option value="FLOW GLOW">FLOW GLOW</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="position: relative; height:380px;">
+                            <canvas id="ranking-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold gradient-text">月別視聴回数推移</h3>
+                        <div class="flex space-x-2">
+                            <select id="view-filter" class="bg-gray-700 text-white rounded px-3 py-1 text-sm">
+                                <option value="all">全Vtuber</option>
+                                <option value="top5">Top 5</option>
+                                <option value="custom">カスタム</option>
+                            </select>
+                            <input type="text" id="vtuber-search" placeholder="検索..." class="bg-gray-700 text-white rounded px-3 py-1 text-sm hidden">
+                        </div>
+                    </div>
+                    <div class="chart-container" style="position: relative; height:400px;">
+                        <canvas id="monthly-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 gradient-text">期別視聴分布</h3>
+                    <div class="chart-container" style="position: relative; height:300px;">
+                        <canvas id="generation-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vtuber-grid mb-8">
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold gradient-text">Vtuberリスト</h3>
+                        <input type="text" id="vtuber-filter" placeholder="フィルタ..." class="bg-gray-700 text-white rounded px-3 py-1 text-sm">
+                    </div>
+                    <div id="vtuber-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        <!-- Vtuber cards will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center text-gray-500 text-sm mt-16">
+            <p>このアプリはブラウザ内でデータを処理します。あなたのデータがサーバーに送信されることはありません。</p>
+            <p class="mt-2">Designed with ❤️ for Hololive fans</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

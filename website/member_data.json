@@ -1,0 +1,471 @@
+{
+    "tokino-sora": {
+        "channel": "SoraCh. ときのそらチャンネル",
+        "color": "#245eff",
+        "gen": "0期生",
+        "name": "ときのそら",
+        "keywords": [
+            "ときのそら"
+        ]
+    },
+    "roboco-san": {
+        "channel": "Roboco Ch. - ロボ子",
+        "color": "#a36694",
+        "gen": "0期生",
+        "name": "ロボ子さん",
+        "keywords": [
+            "ロボ子さん",
+            "ロボ子"
+        ]
+    },
+    "aki-rosenthal": {
+        "channel": "アキロゼCh。Vtuber/ホロライブ所属",
+        "color": "#ff1c9a",
+        "gen": "1期生",
+        "name": "アキ・ローゼンタール",
+        "keywords": [
+            "アキ・ローゼンタール",
+            "アキロゼ"
+        ]
+    },
+    "akai-haato": {
+        "channel": "HAACHAMA Ch 赤井はあと",
+        "color": "#fc123f",
+        "gen": "1期生",
+        "name": "赤井はあと",
+        "keywords": [
+            "赤井はあと",
+            "赤井"
+        ]
+    },
+    "shirakami-fubuki": {
+        "channel": "フブキCh。白上フブキ",
+        "color": "#76dfff",
+        "gen": "1期生",
+        "name": "白上フブキ",
+        "keywords": [
+            "白上フブキ",
+            "白上",
+            "フブちゃん"
+        ]
+    },
+    "shirakami-fubuki2": {
+        "channel": "フブキCh。白上フブキ",
+        "color": "#76dfff",
+        "gen": "ゲーマーズ",
+        "name": "白上フブキ",
+        "keywords": [
+            "白上フブキ",
+            "白上",
+            "フブちゃん"
+        ]
+    },
+    "natsuiro-matsuri": {
+        "channel": "Matsuri Channel 夏色まつり",
+        "color": "#ffa227",
+        "gen": "1期生",
+        "name": "夏色まつり",
+        "keywords": [
+            "夏色まつり",
+            "まつりす"
+        ]
+    },
+    "murasaki-shion": {
+        "channel": "Shion Ch. 紫咲シオン",
+        "color": "#ad6ce0",
+        "gen": "2期生",
+        "name": "紫咲シオン",
+        "keywords": [
+            "紫咲シオン",
+            "紫咲"
+        ]
+    },
+    "nakiri-ayame": {
+        "channel": "Ayame Ch. 百鬼あやめ",
+        "color": "#FF0000",
+        "gen": "2期生",
+        "name": "百鬼あやめ",
+        "keywords": [
+            "百鬼あやめ",
+            "百鬼"
+        ]
+    },
+    "yuzuki-choco": {
+        "channel": "Choco Ch. 癒月ちょこ",
+        "color": "#ff6e9b",
+        "gen": "2期生",
+        "name": "癒月ちょこ",
+        "keywords": [
+            "癒月ちょこ",
+            "癒月"
+        ]
+    },
+    "minato-aqua": {
+        "channel": "Aqua Ch. 湊あくあ",
+        "color": "#ffa6ea",
+        "gen": "2期生",
+        "name": "湊あくあ",
+        "keywords": [
+            "湊あくあ"
+        ]
+    },
+    "oozora-subaru": {
+        "channel": "Subaru Ch. 大空スバル",
+        "color": "#e0ff2c",
+        "gen": "2期生",
+        "name": "大空スバル",
+        "keywords": [
+            "大空スバル"
+        ]
+    },
+    "azki": {
+        "channel": "AZKi Channel",
+        "color": "#f4348b",
+        "gen": "0期生",
+        "name": "AZKi",
+        "keywords": [
+            "AZKi",
+            "あずきち"
+        ]
+    },
+    "ookami-mio": {
+        "channel": "Mio Channel 大神ミオ",
+        "color": "#ff314a",
+        "gen": "ゲーマーズ",
+        "name": "大神ミオ",
+        "keywords": [
+            "大神ミオ",
+            "大神"
+        ]
+    },
+    "sakura-miko": {
+        "channel": "Miko Ch. さくらみこ",
+        "color": "#ff9cb4",
+        "gen": "0期生",
+        "name": "さくらみこ",
+        "keywords": [
+            "さくらみこ",
+            "みこち"
+        ]
+    },
+    "nekomata-okayu": {
+        "channel": "Okayu Ch. 猫又おかゆ",
+        "color": "#e27dfd",
+        "gen": "ゲーマーズ",
+        "name": "猫又おかゆ",
+        "keywords": [
+            "猫又おかゆ",
+            "猫又",
+            "おかゆん"
+        ]
+    },
+    "inugami-korone": {
+        "channel": "Korone Ch. 戌神ころね",
+        "color": "#ffcc29",
+        "gen": "ゲーマーズ",
+        "name": "戌神ころね",
+        "keywords": [
+            "戌神ころね",
+            "戌神"
+        ]
+    },
+    "hoshimachi-suisei": {
+        "channel": "Suisei Channel",
+        "color": "#50e5f9",
+        "gen": "0期生",
+        "name": "星街すいせい",
+        "keywords": [
+            "星街すいせい",
+            "星街",
+            "すいちゃん"
+        ]
+    },
+    "usada-pekora": {
+        "channel": "Pekora Ch. 兎田ぺこら",
+        "color": "#88d2ff",
+        "gen": "3期生",
+        "name": "兎田ぺこら",
+        "keywords": [
+            "兎田ぺこら",
+            "兎田",
+            "ぺこら",
+            "ぺこーら"
+        ]
+    },
+    "shiranui-flare": {
+        "channel": "Flare Ch. 不知火フレア",
+        "color": "#ff5028",
+        "gen": "3期生",
+        "name": "不知火フレア",
+        "keywords": [
+            "不知火フレア"
+        ]
+    },
+    "shirogane-noel": {
+        "channel": "Noel Ch. 白銀ノエル",
+        "color": "#acabb2",
+        "gen": "3期生",
+        "name": "白銀ノエル",
+        "keywords": [
+            "白銀ノエル"
+        ]
+    },
+    "houshou-marine": {
+        "channel": "Marine Ch. 宝鐘マリン",
+        "color": "#ca3c28",
+        "gen": "3期生",
+        "name": "宝鐘マリン",
+        "keywords": [
+            "宝鐘マリン",
+            "宝鐘"
+        ]
+    },
+    "amane-kanata": {
+        "channel": "Kanata Ch. 天音かなた",
+        "color": "#99d8ff",
+        "gen": "4期生",
+        "name": "天音かなた",
+        "keywords": [
+            "天音かなた",
+            "天音"
+        ]
+    },
+    "tsunomaki-watame": {
+        "channel": "Watame Ch. 角巻わため",
+        "color": "#FFFFE0",
+        "gen": "4期生",
+        "name": "角巻わため",
+        "keywords": [
+            "角巻わため",
+            "角巻",
+            "わため"
+        ]
+    },
+    "tokoyami-towa": {
+        "channel": "Towa Ch. 常闇トワ",
+        "color": "#cabaff",
+        "gen": "4期生",
+        "name": "常闇トワ",
+        "keywords": [
+            "常闇トワ",
+            "常闇"
+        ]
+    },
+    "himemori-luna": {
+        "channel": "Luna Ch. 姫森ルーナ",
+        "color": "#fe84c2",
+        "gen": "4期生",
+        "name": "姫森ルーナ",
+        "keywords": [
+            "姫森ルーナ",
+            "姫森",
+            "ルーナ",
+            "んなたん"
+        ]
+    },
+    "kiryu-coco": {
+        "channel": "Coco Ch. 桐生ココ",
+        "color": "#fe8b04",
+        "gen": "4期生",
+        "name": "桐生ココ",
+        "keywords": [
+            "桐生ココ"
+        ]
+    },
+    "yukihana-lamy": {
+        "channel": "Lamy Ch. 雪花ラミィ",
+        "color": "#6bcdf8",
+        "gen": "5期生",
+        "name": "雪花ラミィ",
+        "keywords": [
+            "雪花ラミィ",
+            "雪花",
+            "ラミィ"
+        ]
+    },
+    "momosuzu-nene": {
+        "channel": "Nene Ch. 桃鈴ねね",
+        "color": "#ffb65d",
+        "gen": "5期生",
+        "name": "桃鈴ねね",
+        "keywords": [
+            "桃鈴ねね",
+            "桃鈴",
+            "ねねち"
+        ]
+    },
+    "shishiro-botan": {
+        "channel": "Botan Ch. 獅白ぼたん",
+        "color": "#a3e5cf",
+        "gen": "5期生",
+        "name": "獅白ぼたん",
+        "keywords": [
+            "獅白ぼたん",
+            "獅白"
+        ]
+    },
+    "omaru-polka": {
+        "channel": "Polka Ch. 尾丸ポルカ",
+        "color": "#cf2830",
+        "gen": "5期生",
+        "name": "尾丸ポルカ",
+        "keywords": [
+            "尾丸ポルカ",
+            "尾丸"
+        ]
+    },
+    "laplus-darkness": {
+        "channel": "Laplus ch. ラプラス・ダークネス - holoX -",
+        "color": "#936cc6",
+        "gen": "秘密結社holoX",
+        "name": "ラプラス・ダークネス",
+        "keywords": [
+            "ラプラス・ダークネス",
+            "ラプ殿"
+        ]
+    },
+    "takane-lui": {
+        "channel": "Lui ch. 鷹嶺ルイ - holoX -",
+        "color": "#831550",
+        "gen": "秘密結社holoX",
+        "name": "鷹嶺ルイ",
+        "keywords": [
+            "鷹嶺ルイ",
+            "鷹嶺"
+        ]
+    },
+    "hakui-koyori": {
+        "channel": "Koyori ch. 博衣こより - holoX -",
+        "color": "#ffacd3",
+        "gen": "秘密結社holoX",
+        "name": "博衣こより",
+        "keywords": [
+            "博衣こより",
+            "博衣"
+        ]
+    },
+    "sakamata-chloe": {
+        "channel": "Chloe ch. 沙花叉クロヱ - holoX -",
+        "color": "#cf4c4a",
+        "gen": "秘密結社holoX",
+        "name": "沙花叉クロヱ",
+        "keywords": [
+            "沙花叉クロヱ",
+            "沙花叉",
+            "クロヱ"
+        ]
+    },
+    "kazama-iroha": {
+        "channel": "Iroha ch. 風真いろは - holoX -",
+        "color": "#93dcd8",
+        "gen": "秘密結社holoX",
+        "name": "風真いろは",
+        "keywords": [
+            "風真いろは",
+            "風真"
+        ]
+    },
+    "hiodoshi-ao": {
+        "channel": "Ao Ch. 火威青 ‐ ReGLOSS",
+        "color": "#1d3467",
+        "gen": "ReGLOSS",
+        "name": "火威青",
+        "keywords": [
+            "火威青",
+            "火威"
+        ]
+    },
+    "otonose-kanade": {
+        "channel": "Kanade Ch. 音乃瀬奏 ‐ ReGLOSS",
+        "color": "#ffe7b5",
+        "gen": "ReGLOSS",
+        "name": "音乃瀬奏",
+        "keywords": [
+            "音乃瀬奏",
+            "音乃瀬"
+        ]
+    },
+    "ichijo-ririka": {
+        "channel": "Ririka Ch. 一条莉々華 ‐ ReGLOSS",
+        "color": "#f47da9",
+        "gen": "ReGLOSS",
+        "name": "一条莉々華",
+        "keywords": [
+            "一条莉々華",
+            "一条",
+            "莉々華"
+        ]
+    },
+    "juufuutei-raden": {
+        "channel": "Raden Ch. 儒烏風亭らでん ‐ ReGLOSS",
+        "color": "#3c7c71",
+        "gen": "ReGLOSS",
+        "name": "儒烏風亭らでん",
+        "keywords": [
+            "儒烏風亭らでん",
+            "儒烏風亭"
+        ]
+    },
+    "todoroki-hajime": {
+        "channel": "Hajime Ch. 轟はじめ ‐ ReGLOSS",
+        "color": "#b6b9ff",
+        "gen": "ReGLOSS",
+        "name": "轟はじめ",
+        "keywords": [
+            "轟はじめ"
+        ]
+    },
+    "isaki-riona": {
+        "channel": "Riona Ch. 響咲リオナ ‐ FLOW GLOW",
+        "color": "#FE3480",
+        "gen": "FLOW GLOW",
+        "name": "響咲リオナ",
+        "keywords": [
+            "響咲リオナ",
+            "リオナ"
+        ]
+    },
+    "koganei-niko": {
+        "channel": "Niko Ch. 虎金妃笑虎 ‐ FLOW GLOW",
+        "color": "#F58017",
+        "gen": "FLOW GLOW",
+        "name": "虎金妃笑虎",
+        "keywords": [
+            "虎金妃笑虎",
+            "虎金妃",
+            "笑虎"
+        ]
+    },
+    "mizumiya-suu": {
+        "channel": "Suu Ch. 水宮枢 ‐ FLOW GLOW",
+        "color": "#71E5FF",
+        "gen": "FLOW GLOW",
+        "name": "水宮枢",
+        "keywords": [
+            "水宮枢",
+            "水宮"
+        ]
+    },
+    "rindo-chihaya": {
+        "channel": "Chihaya Ch. 輪堂千速 ‐ FLOW GLOW",
+        "color": "#37BABA",
+        "gen": "FLOW GLOW",
+        "name": "輪堂千速",
+        "keywords": [
+            "輪堂千速",
+            "輪堂",
+            "千速"
+        ]
+    },
+    "kikirara-vivi": {
+        "channel": "Vivi Ch. 綺々羅々ヴィヴィ ‐ FLOW GLOW",
+        "color": "#FF90CC",
+        "gen": "FLOW GLOW",
+        "name": "綺々羅々ヴィヴィ",
+        "keywords": [
+            "綺々羅々ヴィヴィ",
+            "綺々羅々",
+            "ヴィヴィ"
+        ]
+    }
+}
