@@ -1,4 +1,37 @@
 watch-history.json
 watch-history_sample.json
 search-history.json
+
+# macOS system files
 .DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+*.log
+
+# VS Code settings
+.vscode/
+
+# dotenv files
+.env
+.env.*
+
+# OS/Editor-specific files
+Thumbs.db
+Desktop.ini
+.idea/
+*.swp
+*.swo
+
+# Git files you don't want to track again
+.gitignore~
+
