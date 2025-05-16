@@ -36,8 +36,18 @@ vtuberFilter.addEventListener('input', filterVtuberList);
 
 // Initialize the app
 async function initApp() {
-    // Member data is already loaded from the included JSON structure
-    console.log("Application initialized");
+    try {
+        // メンバーデータをJSONファイルから読み込む
+        const response = await fetch('member_data.json');
+        if (!response.ok) {
+            throw new Error('メンバーデータの読み込みに失敗しました');
+        }
+        memberData = await response.json();
+        console.log("Application initialized with member data");
+    } catch (error) {
+        console.error("Error loading member data:", error);
+        alert("メンバーデータの読み込みに失敗しました。ページを再読み込みしてください。");
+    }
 }
 
 // Handle file selection
@@ -74,6 +84,10 @@ function parseWatchHistory(content) {
         // Process the filtered data
         processWatchHistory();
         
+        console.log("全YouTubeエントリ数:", data.filter(entry => entry.header === "YouTube").length);
+        console.log("メンバーデータ:", memberData);
+        console.log("フィルタ後のホロライブ視聴履歴:", watchHistory.length);
+        
     } catch (error) {
         console.error("Error parsing watch history:", error);
         loadingIndicator.classList.add('hidden');
@@ -83,7 +97,10 @@ function parseWatchHistory(content) {
 
 // Check if a channel belongs to a Hololive member
 function isHololiveMember(channelName) {
-    return Object.values(memberData).some(member => member.channel === channelName);
+    console.log("チェック中のチャンネル:", channelName);
+    const result = Object.values(memberData).some(member => member.channel === channelName);
+    console.log(`${channelName} はホロライブメンバー? ${result}`);
+    return result;
 }
 
 // Process watch history data
