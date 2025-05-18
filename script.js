@@ -24,6 +24,7 @@ const viewFilter = document.getElementById('view-filter');
 const vtuberSearch = document.getElementById('vtuber-search');
 const vtuberFilter = document.getElementById('vtuber-filter');
 const vtuberList = document.getElementById('vtuber-list');
+const excludeKeywords = ['original', '歌ってみた', 'official', 'mv', 'music video', 'cover'];
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', initApp);
@@ -76,6 +77,14 @@ function parseWatchHistory(content) {
             
             // Check if it's a Hololive video by matching channel names
             if (!entry.subtitles || !entry.subtitles.length) return false;
+
+            // Remove entries of original songs or 歌ってみた
+            if (excludeKeywords.some(keyword => entry.title.toLowerCase().includes(keyword.toLowerCase()))) {
+                return false;
+            }
+
+            // Remove non-video entries (posts, etc.).  titleUrl should include "watch"
+            if (!entry.titleUrl || !entry.titleUrl.includes("watch")) return false;
             
             const channelName = entry.subtitles[0].name;
             return isHololiveMember(channelName);
