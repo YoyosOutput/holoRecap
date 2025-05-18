@@ -35,3 +35,6 @@ Desktop.ini
 # Git files you don't want to track again
 .gitignore~
 
+# test files
+*.py
+env_holoRecap/
