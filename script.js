@@ -359,24 +359,41 @@ function createMonthlyChart() {
         });
     });
     
-    // Get top 5 Vtubers overall
-    const vtuberCounts = {};
-    filteredHistory.forEach(entry => {
-        const channelName = entry.subtitles[0].name;
-        Object.entries(memberData).forEach(([id, member]) => {
-            if (member.channel === channelName) {
-                vtuberCounts[id] = (vtuberCounts[id] || 0) + 1;
-            }
-        });
-    });
+    // Determine which Vtubers to include
+    const selectedView = viewFilter.value;
+    const searchTerm = vtuberSearch.value.toLowerCase();
+    let selectedVtubers = [];
     
-    const top5Vtubers = Object.entries(vtuberCounts)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 5)
-        .map(([id]) => id);
+    if (selectedView === 'all') {
+        // Include top 10 to prevent chart clutter
+        const vtuberCounts = {};
+        filteredHistory.forEach(entry => {
+            const channelName = entry.subtitles[0].name;
+            Object.entries(memberData).forEach(([id, member]) => {
+                if (member.channel === channelName) {
+                    vtuberCounts[id] = (vtuberCounts[id] || 0) + 1;
+                }
+            });
+        });
+        
+        selectedVtubers = Object.entries(vtuberCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10)
+            .map(([id]) => id);
+    } else if (selectedView === 'custom') {
+        // Search by name
+        if (searchTerm) {
+            selectedVtubers = Object.entries(memberData)
+                .filter(([, member]) => {
+                    return member.name.toLowerCase().includes(searchTerm) || 
+                           member.keywords.some(kw => kw.toLowerCase().includes(searchTerm));
+                })
+                .map(([id]) => id);
+        }
+    }
     
     // Create datasets
-    const datasets = top5Vtubers.map(id => {
+    const datasets = selectedVtubers.map(id => {
         const member = memberData[id];
         return {
             label: member.name,
@@ -592,23 +609,6 @@ function updateMonthlyChart() {
         selectedVtubers = Object.entries(vtuberCounts)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 10)
-            .map(([id]) => id);
-            
-    } else if (selectedView === 'top5') {
-        // Top 5 most watched
-        const vtuberCounts = {};
-        filteredHistory.forEach(entry => {
-            const channelName = entry.subtitles[0].name;
-            Object.entries(memberData).forEach(([id, member]) => {
-                if (member.channel === channelName) {
-                    vtuberCounts[id] = (vtuberCounts[id] || 0) + 1;
-                }
-            });
-        });
-        
-        selectedVtubers = Object.entries(vtuberCounts)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 5)
             .map(([id]) => id);
             
     } else if (selectedView === 'custom') {
