@@ -467,5 +467,34 @@
             "綺々羅々",
             "ヴィヴィ"
         ]
+    },
+    "hololive-official": {
+        "channel": "hololive ホロライブ - VTuber Group",
+        "color": "#5fddef",
+        "gen": "公式チャンネル",
+        "name": "ホロライブ公式",
+        "keywords": [
+            "ホロライブ公式"
+        ]
+    },
+    "hololive-regloss": {
+        "channel": "hololive DEV_IS ReGLOSS",
+        "color": "#e30533",
+        "gen": "公式チャンネル",
+        "name": "ReGLOSS公式",
+        "keywords": [
+            "ReGLOSS",
+            "リグロス"
+        ]
+    },
+    "hololive-flowglow": {
+        "channel": "hololive DEV_IS FLOW GLOW",
+        "color": "#ffffff",
+        "gen": "公式チャンネル",
+        "name": "FLOW GLOW公式",
+        "keywords": [
+            "FLOW GLOW",
+            "フロウグロウ"
+        ]
     }
 }
