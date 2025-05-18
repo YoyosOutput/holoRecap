@@ -97,9 +97,7 @@ function parseWatchHistory(content) {
 
 // Check if a channel belongs to a Hololive member
 function isHololiveMember(channelName) {
-    console.log("チェック中のチャンネル:", channelName);
     const result = Object.values(memberData).some(member => member.channel === channelName);
-    console.log(`${channelName} はホロライブメンバー? ${result}`);
     return result;
 }
 
@@ -455,7 +453,8 @@ function createGenerationChart() {
             "ゲーマーズ": 6,
             "秘密結社holoX": 7,
             "ReGLOSS": 8,
-            "FLOW GLOW": 9
+            "FLOW GLOW": 9,
+            "公式チャンネル": 10
         };
         
         return genOrder[a[0]] - genOrder[b[0]];
