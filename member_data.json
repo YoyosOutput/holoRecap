@@ -41,18 +41,7 @@
     "shirakami-fubuki": {
         "channel": "フブキCh。白上フブキ",
         "color": "#76dfff",
-        "gen": "1期生",
-        "name": "白上フブキ",
-        "keywords": [
-            "白上フブキ",
-            "白上",
-            "フブちゃん"
-        ]
-    },
-    "shirakami-fubuki2": {
-        "channel": "フブキCh。白上フブキ",
-        "color": "#76dfff",
-        "gen": "ゲーマーズ",
+        "gen": ["1期生", "ゲーマーズ"],
         "name": "白上フブキ",
         "keywords": [
             "白上フブキ",
