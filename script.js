@@ -160,7 +160,12 @@ function updateStatistics() {
         const channelName = entry.subtitles[0].name;
         Object.entries(memberData).forEach(([id, member]) => {
             if (member.channel === channelName) {
-                genCounts[member.gen] = (genCounts[member.gen] || 0) + 1;
+                const gens = Array.isArray(member.gen) ? member.gen : [member.gen];
+                
+                // 各世代にカウントを追加（両方の世代にカウント）
+                gens.forEach(gen => {
+                    genCounts[gen] = (genCounts[gen] || 0) + 1;
+                });
             }
         });
     });
@@ -213,7 +218,11 @@ function createRankingChart() {
         .slice(0, 15);
     
     // Prepare chart data
-    const labels = sortedVtubers.map(([id]) => memberData[id].name);
+    const labels = sortedVtubers.map(([id]) => {
+        const member = memberData[id];
+        const genText = Array.isArray(member.gen) ? member.gen.join('/') : member.gen;
+        return member.name;
+    });
     const data = sortedVtubers.map(([, count]) => count);
     const colors = sortedVtubers.map(([id]) => memberData[id].color);
     
@@ -249,9 +258,11 @@ function createRankingChart() {
                         },
                         label: function(context) {
                             const id = sortedVtubers[context.dataIndex][0];
+                            const member = memberData[id];
+                            const genText = Array.isArray(member.gen) ? member.gen.join('/') : member.gen;
                             return [
                                 `視聴回数: ${context.raw}回`,
-                                `期: ${memberData[id].gen}`
+                                `期: ${genText}`
                             ];
                         }
                     }
@@ -292,7 +303,8 @@ function updateRankingChart() {
         const channelName = entry.subtitles[0].name;
         Object.entries(memberData).forEach(([id, member]) => {
             if (member.channel === channelName) {
-                if (selectedGen === 'all' || member.gen === selectedGen) {
+                const gens = Array.isArray(member.gen) ? member.gen : [member.gen];
+                if (selectedGen === 'all' || gens.includes(selectedGen)) {
                     vtuberCounts[id] = (vtuberCounts[id] || 0) + 1;
                 }
             }
@@ -436,7 +448,10 @@ function createGenerationChart() {
         const channelName = entry.subtitles[0].name;
         Object.entries(memberData).forEach(([id, member]) => {
             if (member.channel === channelName) {
-                genCounts[member.gen] = (genCounts[member.gen] || 0) + 1;
+                const gens = Array.isArray(member.gen) ? member.gen : [member.gen];
+                gens.forEach(gen => {
+                    genCounts[gen] = (genCounts[gen] || 0) + 1;
+                });
             }
         });
     });
@@ -444,9 +459,12 @@ function createGenerationChart() {
     // Get unique colors for each generation
     const genColors = {};
     Object.entries(memberData).forEach(([, member]) => {
-        if (!genColors[member.gen]) {
-            genColors[member.gen] = member.color;
-        }
+        const gens = Array.isArray(member.gen) ? member.gen : [member.gen];
+        gens.forEach(gen => {
+            if (!genColors[gen]) {
+                genColors[gen] = member.color;
+            }
+        });
     });
     
     // Sort data
