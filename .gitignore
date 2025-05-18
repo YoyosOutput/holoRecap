@@ -38,3 +38,5 @@ Desktop.ini
 # test files
 *.py
 env_holoRecap/
+*.txt
+*.ipynb
