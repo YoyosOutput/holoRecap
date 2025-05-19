@@ -70,7 +70,7 @@
         ]
     },
     "nakiri-ayame": {
-        "channel": "Ayame Ch. 百鬼あやめ",
+        "channel": "Nakiri Ayame Ch. 百鬼あやめ",
         "color": "#FF0000",
         "gen": "2期生",
         "name": "百鬼あやめ",
@@ -273,7 +273,7 @@
         ]
     },
     "momosuzu-nene": {
-        "channel": "Nene Ch. 桃鈴ねね",
+        "channel": "Nene Ch.桃鈴ねね",
         "color": "#ffb65d",
         "gen": "5期生",
         "name": "桃鈴ねね",
@@ -284,7 +284,7 @@
         ]
     },
     "shishiro-botan": {
-        "channel": "Botan Ch. 獅白ぼたん",
+        "channel": "Botan Ch.獅白ぼたん",
         "color": "#a3e5cf",
         "gen": "5期生",
         "name": "獅白ぼたん",
@@ -405,7 +405,7 @@
         ]
     },
     "isaki-riona": {
-        "channel": "Riona Ch. 響咲リオナ ‐ FLOW GLOW",
+        "channel": "Riona Ch. 響咲リオナ - FLOW GLOW",
         "color": "#FE3480",
         "gen": "FLOW GLOW",
         "name": "響咲リオナ",
@@ -415,7 +415,7 @@
         ]
     },
     "koganei-niko": {
-        "channel": "Niko Ch. 虎金妃笑虎 ‐ FLOW GLOW",
+        "channel": "Niko Ch. 虎金妃笑虎 - FLOW GLOW",
         "color": "#F58017",
         "gen": "FLOW GLOW",
         "name": "虎金妃笑虎",
@@ -426,7 +426,7 @@
         ]
     },
     "mizumiya-suu": {
-        "channel": "Suu Ch. 水宮枢 ‐ FLOW GLOW",
+        "channel": "Su Ch. 水宮枢 - FLOW GLOW",
         "color": "#71E5FF",
         "gen": "FLOW GLOW",
         "name": "水宮枢",
@@ -436,7 +436,7 @@
         ]
     },
     "rindo-chihaya": {
-        "channel": "Chihaya Ch. 輪堂千速 ‐ FLOW GLOW",
+        "channel": "Chihaya Ch. 輪堂 千速 - FLOW GLOW",
         "color": "#37BABA",
         "gen": "FLOW GLOW",
         "name": "輪堂千速",
@@ -447,7 +447,7 @@
         ]
     },
     "kikirara-vivi": {
-        "channel": "Vivi Ch. 綺々羅々ヴィヴィ ‐ FLOW GLOW",
+        "channel": "Vivi Ch. 綺々羅々ヴィヴィ - FLOW GLOW",
         "color": "#FF90CC",
         "gen": "FLOW GLOW",
         "name": "綺々羅々ヴィヴィ",
