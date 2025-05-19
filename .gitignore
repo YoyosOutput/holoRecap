@@ -1,6 +1,5 @@
-watch-history.json
-watch-history_sample.json
-search-history.json
+*.json
+!member_data.json
 
 # macOS system files
 .DS_Store
